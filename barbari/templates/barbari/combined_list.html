@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>مرغداری</title>
+</head>
+
+<body>
+    <h1>Cargo List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Driver Name</th>
+                <th>Quantity</th>
+                <th>Losses</th>
+                <th>Cargo Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cargo in cargo_data %}
+            <tr>
+                <td>{{ cargo.driver_name }}</td>
+                <td>{{ cargo.quantity }}</td>
+                <td>{{ cargo.losses }}</td>
+                <td>{{ cargo.get_cargo_type_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Driver List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>License Plate Number</th>
+                <th>Capacity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for driver in driver_data %}
+            <tr>
+                <td>{{ driver.name }}</td>
+                <td>{{ driver.license_plate_number }}</td>
+                <td>{{ driver.capacity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>ChickenCo List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>City</th>
+                <th>Cargo Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for chicken_co in chicken_co_data %}
+            <tr>
+                <td>{{ chicken_co.name }}</td>
+                <td>{{ chicken_co.phone_number }}</td>
+                <td>{{ chicken_co.city }}</td>
+                <td>{{ chicken_co.get_cargo_type_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>PoultryFarmers List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for poultry_farmer in poultry_farmers_data %}
+            <tr>
+                <td>{{ poultry_farmer.name }}</td>
+                <td>{{ poultry_farmer.phone_number }}</td>
+                <td>{{ poultry_farmer.city }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

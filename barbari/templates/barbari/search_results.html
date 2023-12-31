@@ -1,0 +1,15 @@
+{% if search_results %}
+
+<ul>
+    {% for result in search_results %}
+    <li>{{ result.name }}</li>
+    <li>{{ result.license_plate_number }}</li>
+    <li>{{ result.capacity }}</li>
+    {% endfor %}
+</ul>
+
+{% else %}
+
+<p>No results found.</p>
+
+{% endif %}

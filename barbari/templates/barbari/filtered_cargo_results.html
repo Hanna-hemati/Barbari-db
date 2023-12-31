@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Cargo Results</title>
+</head>
+
+<body>
+
+    <h1>Filtered Cargo Results</h1>
+
+    {% if filtered_cargo_data %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Driver Name</th>
+                <th>Quantity</th>
+                <th>Losses</th>
+                <th>Cargo Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cargo in filtered_cargo_data %}
+            <tr>
+                <td>{{ cargo.driver_name }}</td>
+                <td>{{ cargo.quantity }}</td>
+                <td>{{ cargo.losses }}</td>
+                <td>{{ cargo.get_cargo_type_display }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No filtered cargo data available.</p>
+    {% endif %}
+
+</body>
+
+</html>
